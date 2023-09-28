@@ -1,0 +1,24 @@
+<h2>Add a new kitten</h2>
+<form #createKittenForm="ngForm">
+    <fieldset>
+        <label for="">Name: </label>
+        <input type="text" [(ngModel)]="defaultKitten.name" #kittenname="ngModel" [ngModelOptions]="{standalone: true}" required>
+        <span *ngIf="kittenname.errors?.['required']">The name is required</span>
+    </fieldset>
+    <fieldset>
+        <label for="">Race: </label>
+        <input type="text" [(ngModel)]="defaultKitten.race" #race="ngModel" [ngModelOptions]="{standalone: true}" required>
+        <span *ngIf="race.errors?.['required']">The race is required</span>
+    </fieldset>
+    <fieldset>
+        <label for="">Birth Date</label>
+        <input type="text" [(ngModel)]="defaultKitten.date" #date="ngModel" [ngModelOptions]="{standalone: true}" required>
+        <span *ngIf="date.errors?.['required']">The date of birth is required</span>
+    </fieldset>
+    <fieldset>
+        <label for="">Pictures</label>
+        <input type="text" [(ngModel)]="defaultKitten.picLink" #picLink="ngModel" [ngModelOptions]="{standalone: true}" required>
+        <span *ngIf="picLink.errors?.['required']">The picture is required</span>
+    </fieldset>
+    <button (click)="createKitten()">add a new kitten</button>
+</form>

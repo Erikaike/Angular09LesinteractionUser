@@ -1,0 +1,16 @@
+<div>
+    <h2>All the kitten: </h2>
+    <div *ngFor="let kitten of kittenList">
+        <div class="myDIV"><img src="{{ kitten.picLink }}" alt=""></div>
+        <div class="hide">
+            <li>{{ kitten.name }}</li>
+            <li>{{ kitten.race }}</li>
+            <li>{{ kitten.date }}</li>
+        </div>
+        <button (click)="adoptTheKitten(kitten)">Adopt Me</button>
+    </div>
+</div>
+
+
+
+<app-create-kitten (sendNewKittenToParent)="onReceiveNewKitten($event)"></app-create-kitten>

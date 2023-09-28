@@ -1,0 +1,10 @@
+<h2>my adopted kitten<h2>
+<div *ngFor="let kitten of myKitten">
+    <div class="myDIV"><img src="{{ kitten.picLink }}" alt=""></div>
+    <div class="hide">
+        <li>{{ kitten.name }}</li>
+        <li>{{ kitten.race }}</li>
+        <li>{{ kitten.date }}</li>
+    </div>
+</div>
+<app-list-kitten (addAKitten)="onAdoptKitten($event)"></app-list-kitten>
